@@ -13,3 +13,9 @@ function capitalizeWords($sentence)
 
 $greeting = 'Hello from Malasia';
 print_r(capitalizeWords($greeting));
+
+//если нужно разбить строку по символьно:
+$chars = mb_str_split($text);
+foreach($chars as $char) {
+    print_r($char);
+}
