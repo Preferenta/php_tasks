@@ -1,14 +1,11 @@
 <?php
-$sentence = 'When you play the game of thrones, you win or you die';
-
-
-function makeSensored($sentence, $arr) 
+function makeCensored(string $text, array $stopWords)
 {
-    foreach ($sentence as $word) {
-        $result[] = in_array('die', 'play', $arr) ? '$#%!' : $word;
-    } 
-    return $result;
-} 
-
-makeSensored($sentence, ['die', 'play']);
+    $words = explode('', $text);
+    $result = [];
+    foreach ($words as $word) {
+        $result[] = in_array($word, $stopWords) ? '$#%!' : $word;
+    }
+    return implode(' ', $result);
+}
 ?>
