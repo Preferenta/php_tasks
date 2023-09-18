@@ -8,4 +8,4 @@ function makeCensored(string $text, array $stopWords)
     }
     return implode(' ', $result);
 }
-?>
+
