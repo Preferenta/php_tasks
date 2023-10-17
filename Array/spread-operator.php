@@ -14,15 +14,28 @@ $cities = [...$frenchCities, ...$italianCities]; */
 ?>
 
 <?php
-function flatten($coll) 
-{
-    $result = [];
+// function flatten($coll) 
+// {
+//     $result = [];
+//     foreach ($coll as $item) {
+//         if (is_array($item)) {
+//         $result = [...$result, ...$item];
+//         } else {
+//             $result[] = $item;
+//         }      
+//     }
+//     return $result;
+// }
+//другое решение:
+
+function flatten(array $coll) {
+    $result = array();
     foreach ($coll as $item) {
         if (is_array($item)) {
-        $result = [...$result, ...$item];
+            $result = array_merge($result, $item);
         } else {
             $result[] = $item;
-        }      
+        }
     }
     return $result;
 }
